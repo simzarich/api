@@ -50,10 +50,13 @@ router.route('/imagenes')
     });
   })
   .post(function(req,res){
-    //var extension = req.body.archivo.name.split('.').pop();
+    console.log(req.body.archivo);
+    var extension = req.body.archivo.name.split('.').pop();
     var data = {
       title: req.body.title,
-      creator:res.locals.user._id
+      creator:res.locals.user._id,
+      extension: extension
+
     }
     var imagen = new Imagen(data);
     imagen.save(function(err){

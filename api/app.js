@@ -24,6 +24,8 @@ app.use(cookieSession({
   keys:['llave1', 'llave2']
 }));
 
+app.use(formidable.parse({ keepExtensions: true }));
+
 
 
 
